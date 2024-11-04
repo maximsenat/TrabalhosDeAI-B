@@ -23,6 +23,8 @@ def calculadora():
         print('Valid Num')
     except ValueError :
         print('Invalid Num Silly')
+        calculadora()
+
     operação2 = input('operação: +, -, *, /: ')
     num2 = (input("Num2: "))
     try:
@@ -30,26 +32,27 @@ def calculadora():
         print('Valid Num')
     except ValueError :
         print('Invalid Num Silly')
+        calculadora()
 
     if operação2 == "+":
-        result = soma(num1, num2)
+        result = soma(float(num1), float(num2))
         print("soma: " + str(result))
-        history.insert(0,result)
+        history.insert(0,f"{num1} {operação2} {num2} = {result} ")
 
     if operação2 == "-":
-        result1 = subtração(num1, num2)
+        result1 = subtração(float(num1), float(num2))
         print("subtração: " + str(result1))
-        history.insert(0, result1)
+        history.insert(0,f"{num1} {operação2} {num2} = {result1} ")
 
     if operação2 == "/":
-        result2 = divisão(num1, num2)
+        result2 = divisão(float(num1), float(num2))
         print("divisão: " + str(result2))
-        history.insert(0, result2)
+        history.insert(0,f"{num1} {operação2} {num2} = {result2} ")
 
     if operação2 == "*":
-        result3 = multiplicação(num1, num2)
+        result3 = multiplicação(float(num1), float(num2))
         print("multiplicação: " + str(result3))
-        history.insert(0, result3)
+        history.insert(0,f"{num1} {operação2} {num2} = {result3} ")
 
     if len(history) >=6:
       history.pop(5)
