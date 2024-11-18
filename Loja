@@ -1,15 +1,24 @@
 loja = {
     'caderno': {'nome': 'caderno', 'preço': 2.50, 'quantidade': 50},
     'caneta': {'nome': 'caneta', 'preço': 1.00, 'quantidade': 100},
-
 }
+list_prod = ["caneta", "caderno"]
 
 loja['lapis'] =  {'nome': 'lapis', 'preço': 0.90, 'quantidade': 100}
 
 loja['caneta']['preço'] = 1.30
 
-def imprimir_quantidade(loja):
+def imprimir_quantidade():
     for produto, detalhes in loja.items():
-        print(f"Quantidade de {produto}: {detalhes['quantidade']}")
+        if 'quantidade' in detalhes:
+           print(f"Quantidade de {produto}: {detalhes['quantidade']}")
 
-imprimir_quantidade(loja)
+imprimir_quantidade()
+
+def soma(x, y, z):
+    return x + y + z
+
+Num_Total_Items = soma(loja['caderno']['quantidade'],
+                       loja['caneta']['quantidade'],
+                       loja['lapis']['quantidade'])
+print('\n Soma de items:' ,Num_Total_Items)
