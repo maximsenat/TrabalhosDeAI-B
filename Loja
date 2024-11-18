@@ -1,0 +1,15 @@
+loja = {
+    'caderno': {'nome': 'caderno', 'preço': 2.50, 'quantidade': 50},
+    'caneta': {'nome': 'caneta', 'preço': 1.00, 'quantidade': 100},
+
+}
+
+loja['lapis'] =  {'nome': 'lapis', 'preço': 0.90, 'quantidade': 100}
+
+loja['caneta']['preço'] = 1.30
+
+def imprimir_quantidade(loja):
+    for produto, detalhes in loja.items():
+        print(f"Quantidade de {produto}: {detalhes['quantidade']}")
+
+imprimir_quantidade(loja)
